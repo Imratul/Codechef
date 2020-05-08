@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+int t,m,n,i,j,sum=0,mn=0,tem=0,k;
+cin>>t;
+for(i=0;i<t;i++){
+    cin>>n>>m;
+    int f[n],p[n];
+    int a[m+1]={0};
+    for(j=0;j<n;j++)
+        cin>>f[j];
+    for(j=0;j<n;j++)
+        cin>>p[j];
+    for(j=0;j<n;j++)
+    {
+        tem=f[j];
+        sum=0;
+        if(a[tem]==0)
+        {
+            a[tem]=1;
+           sum=0;
+            for(k=j;k<n;k++)
+            {
+                if(f[j]==f[k])
+                    sum+=p[k];
+            }
+            if(j==0)
+                mn=sum;
+            if(j!=0 && sum<mn)
+                mn=sum;
+        }
+
+}
+cout<<mn<<endl;
+
+}
+}
